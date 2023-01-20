@@ -22,8 +22,7 @@ string ::= " ( |!|#|$ ... -|.|/|digit|: ... @|A|B|C ... |X|Y|Z)* "
 
 'Use the modified grammar above to derive your "hello world" program.
 
-program => line line => number stmt Cr line => 10 stmt cr line => 10 PRINT expr-list CR line => 10 PRINT String CR line => 
-10 PRINT "Hello World" CR line => 10 PRINT "Hello World" CR num stat CR => 10 PRINT "Hello World" CR END CR
+program => line line => number stmt Cr line => 10 stmt cr line => 10 PRINT expr-list CR line => 10 PRINT String CR line => 10 PRINT "Hello World" CR line => 10 PRINT "Hello World" CR num stat CR => 10 PRINT "Hello World" CR END CR
 
 'Separately, use the modified grammar above to create a parse tree for the following program: 
 
