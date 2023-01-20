@@ -25,4 +25,10 @@ string ::= " ( |!|#|$ ... -|.|/|digit|: ... @|A|B|C ... |X|Y|Z)* "
 program => line line => number stmt Cr line => 10 stmt cr line => 10 PRINT expr-list CR line => 10 PRINT String CR line => 
 10 PRINT "Hello World" CR line => 10 PRINT "Hello World" CR num stat CR => 10 PRINT "Hello World" CR END CR
 
-'Separately, use the modified grammar above to create a parse tree for the following program:   
+'Separately, use the modified grammar above to create a parse tree for the following program: 
+
+10 Let A = 3
+20 Print A
+30 END
+
+program => line line => number statement CR line => 10 statement CR line => 10 LET var = expression CR line => 10 LET A = expression CR line => 10 LET A = number CR line => 10 LET A = 3 CR line number statement CR => 10 LET A = 3 CR 20 statement CR line => 20 statement CR line => 20 PRINT expr-list CR line => 20 PRINT var CR line => 20 PRINT A CR line number statement CR => 20 PRINT A CR 30 END CR
