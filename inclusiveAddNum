@@ -2,22 +2,15 @@
 20 INPUT STARTNUM 
 30 PRINT "Enter ending point:" 
 40 INPUT ENDNUM
-
 50 'Check if starting point is greater than ending point 
    IF STARTNUM > ENDNUM THEN PRINT "Starting point must be less than ending point." : GOTO 10 
-
 60 'Initialize SUM variable
    LET SUM = 0 
-
 70 'Iterate through all the numbers between starting point and ending point (inclusive)
    FOR I = START TO END 
-
 80   'Add each number to the SUM variable
      LET SUM = SUM + I 
-
 90 NEXT I
-
 100 'Print the total sum of all the numbers between the starting point and the ending point
     PRINT "The sum of numbers between "; STARTNUM; " and "; ENDNUM; " is "; SUM 
-
 110 END
