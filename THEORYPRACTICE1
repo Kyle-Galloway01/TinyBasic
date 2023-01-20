@@ -1,0 +1,28 @@
+program ::= line line*
+line ::= number statement CR  
+statement ::= PRINT expr-list
+              IF expression relop expression THEN statement
+              GOTO expression
+              INPUT var-list
+              LET var = expression
+              GOSUB expression
+              RETURN
+              END
+expr-list ::= (string|expression) (, (string|expression) )*
+var-list ::= var (, var)*
+expression ::= (+|-|ε) term ((+|-) term)* 
+term ::= factor ((*|/) factor)*
+factor ::= var | number | (expression)
+var ::= A | B | C ... | Y | Z
+number ::= digit digit*
+digit ::= 0 | 1 | 2 | 3 | ... | 8 | 9
+relop ::= < (>|=|ε) | > (<|=|ε) | =
+string ::= " ( |!|#|$ ... -|.|/|digit|: ... @|A|B|C ... |X|Y|Z)* "
+
+
+'Use the modified grammar above to derive your "hello world" program.
+
+program => line line => number stmt Cr line => 10 stmt cr line => 10 PRINT expr-list CR line => 10 PRINT String CR line => 
+10 PRINT "Hello World" CR line => 10 PRINT "Hello World" CR num stat CR => 10 PRINT "Hello World" CR END CR
+
+'Separately, use the modified grammar above to create a parse tree for the following program:   
